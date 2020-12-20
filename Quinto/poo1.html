@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <input type="button" id="boton1">
+    <input type="button" id="boton2">
+    <input type="text" id="micuadro">
+    <script>
+        var miBoton = document.getElementById("boton1");
+        var miBoton2 = document.getElementById("boton2");
+        var cuadroText = document.getElementById("micuadro");
+
+        miBoton.style.width = "300px";
+        miBoton.style.height = "300px";
+        miBoton.style.backgroundColor = "blue";
+
+        miBoton2.style.width = "300px";
+        miBoton2.style.height = "300px";
+
+        cuadroText.style.backgroundColor = "yellow";
+        cuadroText.value = "Escriba aquí";
+        cuadroText.style.height = "50px"
+    </script>
+</body>
+
+</html>

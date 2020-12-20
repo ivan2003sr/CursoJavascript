@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.miContenedor{
+    background-color: green;
+}
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+$(document).ready(function(){
+
+   // alert($("#errores h2").html());
+   $("#errores").html("<h1> Hay errores en el formulario html </h1>");
+    $("#errores").append("<h2> Hay errores en el formulario append </h2>");
+    $("#errores").prepend("<h3> Hay errores en el formulario prepend </h3>");
+    $("#errores").after("<h4> Hay errores en el formulario after </h4>");
+    $("#errores").before("<h5> Hay errores en el formulario before</h5>");
+    
+});
+
+
+
+    </script>
+
+<script>
+
+function validar() {
+
+  var nUsuario=document.getElementById("usuario").value;
+  var nNombre=document.getElementById("nombre").value;
+  var nApellido=document.getElementById("apellido").value;
+
+  if (nUsuario==""){
+
+     $("#usuario").after("Rellena este campo por favor");
+  }
+
+};
+
+</script>
+
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+
+        <div id="errores" class="miContenedor">
+
+            <h2>Errores</h2>
+
+        </div>
+
+
+    </div>
+
+
+<form action="" method="GET">
+
+<input name="" type="text" id="usuario"><br/>
+<input name="" type="text" id="nombre"><br/>
+<input name="" type="text" id="apellido"><br/>
+<input type="button" value="Dale" onclick="validar()">
+
+
+</form>
+</body>
+
+</html>

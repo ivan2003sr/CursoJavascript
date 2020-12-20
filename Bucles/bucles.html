@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <style>
+        #contenedor {
+            width: 25%;
+            background-color: #FFC;
+            margin: auto;
+            padding: 15px;
+
+        }
+    </style>
+
+
+    <script>
+        /*   var nombre, edad, poblacion;
+
+        nombre = prompt("Introduce tu nombre", "Escribe el nombre");
+
+        edad = prompt("Introduce tu edad", "Escribe la edad");
+        while (edad <= 0 || edad > 105 || isNaN(edad)) {
+            edad = prompt("Introduce una edad válida")
+        }
+        poblacion = prompt("Introduce tu nacionalidad");
+*/
+
+        /*  var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
+              "Noviembre", "Diciembre"
+          ];
+
+          var contador = 0;
+
+          while (contador < meses.length) {
+              document.write(meses[contador] + "<br/>");
+              contador++
+          }*/
+
+        var trabajador = new Array();
+        var persona = "";
+        var contador = 0;
+        while (persona != "salir") {
+            persona = prompt("Introduce nombre");
+            trabajador[contador] = persona;
+            contador++
+        }
+        trabajador.pop(); //Elimina la última posición
+        for (let i = 0; i < trabajador.length; i++) {
+            document.write(trabajador[i] + "<br>");
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="contenedor">
+
+        <p>Nombre:
+            <script>
+                document.write(nombre)
+            </script>
+        </p>
+        <p>Edad:
+            <script>
+                document.write(edad)
+            </script>
+        </p>
+        <p>Población
+            <script>
+                document.write(poblacion)
+            </script>
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
