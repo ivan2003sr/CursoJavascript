@@ -27,19 +27,91 @@
 	<script>
 		$(document).ready(function () {
 
-			document.getElementById("aumenta1").addEventListener("click", aumentar, false);
+			/*	document.getElementById("aumenta1").addEventListener("click", aumentar, false);
+				document.getElementById("disminuye1").addEventListener("click", disminuir, false);
+				document.getElementById("aumenta2").addEventListener("click", aumentar, false);
+				document.getElementById("disminuye2").addEventListener("click", disminuir, false);
+				document.getElementById("aumenta3").addEventListener("click", aumentar, false);
+				document.getElementById("disminuye3").addEventListener("click", disminuir, false);*/
+
+			var botones = document.querySelectorAll("input");
+
+			for (var i = 0; i < botones.length; i++) {
+				botones[i].addEventListener("click", aumentar, false);
+				botones[i].addEventListener("click", disminuir, false);
+
+				botones[i].addEventListener("click", modoLectura, false);
+
+			}
+
+			var zonaActuacion;
+
+
+
+			function aumentar(e) {
+
+				var zonaActuacion;
+				if (e.target == aumenta1) {
+
+
+					zonaActuacion = "#noticia1";
+
+				} else if (e.target == aumenta2) {
+					zonaActuacion = "#noticia2";
+				} else if (e.target == aumenta3) {
+					zonaActuacion = "#noticia3";
+				}
+				var tamDefecto = $(zonaActuacion).css("font-size");
+
+				tamDefecto = parseInt(tamDefecto);
+				$(zonaActuacion).css("font-size", tamDefecto * 1.1);
+
+			}
+
+			function disminuir(e) {
+				var zonaActuacion;
+
+				if (e.target == disminuye1) {
+
+					zonaActuacion = "#noticia1";
+
+				} else if (e.target == disminuye2) {
+					zonaActuacion = "#noticia2";
+				} else if (e.target == disminuye3) {
+					zonaActuacion = "#noticia3";
+				}
+				var tamDefecto = $(zonaActuacion).css("font-size");
+
+				tamDefecto = parseInt(tamDefecto);
+				$(zonaActuacion).css("font-size", tamDefecto * 0.95);
+
+			}
+
+
+			function modoLectura(e) {
+
+				var zonaActuacion;
+
+				if (e.target == modoLectura1) {
+					zonaActuacion = "#noticia1"
+				} else if (e.target == modoLectura2) {
+					zonaActuacion = "#noticia2";
+				} else if (e.target == modoLectura3) {
+					zonaActuacion = "#noticia3";
+				}
+
+				$(zonaActuacion).css({
+					"background-color": "#000",
+					"font-size": "25px",
+					"text-align": "justify",
+					"color": "#FFF"
+				});
+
+			}
+
 
 
 		});
-
-		function aumentar() {
-
-			var tamDefecto=$("#noticia1").css("font-size");
-
-			tamDefecto=parseInt(tamDefecto);
-			$("#noticia1").css("font-size", tamDefecto*1.1);
-
-		}
 	</script>
 </head>
 
@@ -57,7 +129,9 @@
 		nulla pariatur?"<table>
 			<tr>
 				<td style="text-align:left"><input type="button" value="Aumentar" id="aumenta1"></td>
+				<td style="text-align:right"><input type="button" value="Modo Lectura" id="modoLectura1"></td>
 				<td style="text-align:right"><input type="button" value="Disminuir" id="disminuye1"></td>
+
 			</tr>
 		</table>
 	</div>
@@ -73,6 +147,7 @@
 		nulla pariatur?"<table>
 			<tr>
 				<td style="text-align:left"><input type="button" value="Aumentar" id="aumenta2"></td>
+				<td style="text-align:right"><input type="button" value="Modo Lectura" id="modoLectura2"></td>
 				<td style="text-align:right"><input type="button" value="Disminuir" id="disminuye2"></td>
 			</tr>
 		</table>
@@ -89,6 +164,7 @@
 		nulla pariatur?"<table>
 			<tr>
 				<td style="text-align:left"><input type="button" value="Aumentar" id="aumenta3"></td>
+				<td style="text-align:right"><input type="button" value="Modo Lectura" id="modoLectura3"></td>
 				<td style="text-align:right"><input type="button" value="Disminuir" id="disminuye3"></td>
 			</tr>
 		</table>
