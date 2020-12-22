@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            document.getElementById("img1").addEventListener("mouseover", cambiar,false);
+            document.getElementById("img1").addEventListener("mouseout", volver,false);
+
+
+
+        });
+
+function cambiar() {
+
+    $("img").attr("src","https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg")
+    
+}
+function volver() {
+
+$("img").attr("src","arbol.jpg")
+
+}
+
+    </script>
+
+
+</head>
+<body>
+    
+    <img src="arbol.jpg" width="240px" height="240px" id="img1">
+
+</body>
+</html>
