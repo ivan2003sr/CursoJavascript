@@ -36,6 +36,11 @@
 				$("#principal").append(mensaje);
 			});
 
+			$("a").mouseout(function () {
+				
+				$("#principal").append("Ahora no");
+			});
+
 			$("#el_boton").click(function () {
 				
 				$(this).val("Para de hacer click!!");
