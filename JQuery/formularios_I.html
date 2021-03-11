@@ -31,9 +31,40 @@ h1{
 <script>
 
 	$(document).ready(function() {
-    $("#comprobar").click(comprobarDatos);
+  //  $("#enviar").click(comprobarDatos);
+
+    $("#nombre").focus(function(){
+var campoNombre=$(this);
+if(campoNombre.val()==campoNombre.attr("value")){     //Si el nombre del campo al tomar el foco es "value" (Obligatorio) lo borra
+
+campoNombre.val("");
+}
+
+    });
+
+    $("#form_datos").submit(function(){
+      if($("#nombre").val()=="" || $("#nombre").val()=="Obligatorio" ){
+        alert("Por favor completa el nombre");
+        $("#nombre").focus();
+        return false;
+      }
+    });
+
+
+
+    $("#edad").blur(function(){
+      var edadUsuario=$(this).val();
+      if(isNaN(edadUsuario)){
+        alert("Por favor introduce un valor numérico");
+        $(this).focus();
+        $(this).val("");
+      }
+    });
 
 		
+
+
+
 	});
 
   function comprobarDatos(){
@@ -71,7 +102,7 @@ if($("#masculino").prop("checked")){
     <tr>
       <td>Nombre:</td>
       <td><label for="nombre"></label>
-        <input type="text" name="nombre" id="nombre" value="Obligatorio nombre"></td>
+        <input type="text" name="nombre" id="nombre" value="Obligatorio"></td>
     </tr>
     <tr>
       <td>Apellido:</td>
@@ -137,7 +168,7 @@ if($("#masculino").prop("checked")){
       </table></td>
     </tr>
     <tr>
-    <td colspan="2" align="center"><input type="button" value="Comprobar" id="comprobar"></td>
+    <td colspan="2" align="center"><input type="submit" value="Enviar" id="enviar"></td>
    
     </tr>
   </table>
