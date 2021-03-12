@@ -35,8 +35,28 @@ h1{
 
 	$(document).ready(function() {
 		
+    $("#paypal").click(function(){
+      $("#email").attr("disabled",false).focus();
+      $("#tarjeta").attr("disabled",true);
+      $("#fecha_tarjeta").attr("disabled",true);
+
+    });
+
+  $("#visa").click(function(){
+
+    $("#fecha_tarjeta").attr("disabled",false);
+    $("#tarjeta").attr("disabled",false).focus();
+    $("#email").attr("disabled",true);
+
+  });  
 	
-		
+  $("#master").click(function(){
+
+$("#fecha_tarjeta").attr("disabled",false);
+$("#tarjeta").attr("disabled",false).focus();
+$("#email").attr("disabled",true);
+
+});  
 		
 	});
 </script>
