@@ -61,7 +61,46 @@ campoNombre.val("");
       }
     });
 
-		
+    var miArray=new Array();
+    var i=0;
+
+
+    $(":checkbox").click(function(){
+   
+   $("#Aficiones").text("");
+
+   $(":checkbox").each(function(){
+    
+    if($(this).prop("checked")){
+     
+     $("#Aficiones").append($(this).val() + "<br/>");
+     
+    }
+    
+   });
+
+
+   $(#pais).change(Function(){
+
+    alert("pais: "+$(this).val());
+
+
+   });
+   
+  });
+/*
+		$(":checkbox").click(function () {
+
+      miArray[i]=$(this).val();
+
+    //  alert("Posición "+i+" "+miArray[i]);
+
+    $("#Aficiones").append(miArray[i]).append("<br>");
+
+
+      i++;
+      
+    });*/
 
 
 
@@ -173,6 +212,12 @@ if($("#masculino").prop("checked")){
     </tr>
   </table>
   </form>
+</div>
+
+<div id="Aficiones">
+
+
+
 </div>
 
 </body>
