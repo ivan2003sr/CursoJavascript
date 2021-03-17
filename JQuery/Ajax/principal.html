@@ -35,7 +35,7 @@ $(document).ready(function() {
 		var url=$(this).attr("href"); //Rescatar el objeto href
 
 		$("#contenidos_externos").load(url+" #noticia"); //Hace un request al servidor, el mismo responde enviando el archivo y se carga en el contenedor.
-		return false; //elimina el comportamiento por defecto, es decir, el código html href.
+		return false; //elimina el comportamiento por defecto, es decir, el código html "href".
 	});
 
 
