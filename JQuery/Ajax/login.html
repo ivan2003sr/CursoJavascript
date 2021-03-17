@@ -33,30 +33,42 @@
 	<script>
 		$(document).ready(function () {
 
+
 			$("#login").submit(function () {
 
-			/*	var datosFormulario = {					//Paquete (literal) que se envía al servidor. Datos empaquetados.
-					usuario: $("#usuario").val(),
-					contra: $("#contra").val()
-				}*/
+				/*	var datosFormulario = {					//Paquete (literal) que se envía al servidor. Datos empaquetados.
+						usuario: $("#usuario").val(),
+						contra: $("#contra").val()
+					}*/
 
-				var datosFormulario2=$(this).serialize();  //Recorre todos los elementos del formulario login (this) y los almacena. ahorra trabajo...
+				var datosFormulario2 = $(this)
+			.serialize(); //Recorre todos los elementos del formulario login (this) y los almacena. ahorra trabajo...
 
-				$.get("login.php",datosFormulario2,procesarDatos);	//Información enviada al servidor. Se recibe respuesta por medio de la función procesar Datos
+				$.get("login.php", datosFormulario2, procesarDatos).fail(
+				ProcesarError); //Información enviada al servidor. Se recibe respuesta por medio de la función procesar Datos
+
 				return false; //Para que no haga la tarea por defecto del formulario, es decir, recargar la página.
 			});
 
-			function procesarDatos(datosDevueltos){		//Se almacena la respuesta en datosDevueltos. en este caso autorizado o falso
+			function procesarDatos(
+			datosDevueltos) { //Se almacena la respuesta en datosDevueltos. en este caso autorizado o falso
 
-				if(datosDevueltos=="autorizado"){
+				if (datosDevueltos == "autorizado") {
 					$("#contenidos_externos").html("<p>Usuario correcto. Bienvenido denuevo. </p>");
-				}else{
+				} else {
 					$("#contenidos_externos").html("<p>Usuario no autorizado. </p>");
-				}
+				};
 
 
 
-			}
+			};
+
+			function ProcesarError() {
+
+				var msgError = "Error inesperado. Intenta nuevamente más tarde";
+				$("#contenidos_externos").html("<p>" + msgError + "</p>");
+
+			};
 
 
 		});
